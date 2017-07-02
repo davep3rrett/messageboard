@@ -1,5 +1,16 @@
 extends layout
 
 block content
+
   h1= title
-  p Welcome to #{title}
+
+  each topic in context.topics
+    h2= topic.title
+    h3= topic.dateCreated
+    h3= topic.username
+
+    each post in topic.posts
+      p= post.body
+      p= post.date
+      p= post.username
+
