@@ -5,7 +5,8 @@ block content
   h1= title
 
   each topic in context.topics
-    h2= topic.title
+    - var url='/topic/' + topic._id
+    a(href=url): h2= topic.title
     h3= topic.dateCreated
     h3= topic.username
 
@@ -14,3 +15,4 @@ block content
       p= post.date
       p= post.username
 
+  a(href='/new-topic') new topic

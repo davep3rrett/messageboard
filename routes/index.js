@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 		var context = {
 			topics: topics.map(function(topic) {
 				return {
+					_id: topic._id,
 					title: topic.title,
 					posts: topic.posts,
 					dateCreated: topic.dateCreated,

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  h1= title
+  each post in posts
+    p(class='username') #{post.username}
+    p(class='date') #{post.date}
+    p(class='body') #{post.body}
+
+  a(href='/') home

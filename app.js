@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var newTopic = require('./routes/new-topic');
+var topicSingle = require('./routes/topic-single');
 
 var app = express();
 
@@ -64,6 +65,7 @@ Topic.find(function(err, topics) {
 app.use('/', index);
 app.use('/users', users);
 app.use('/new-topic', newTopic);
+app.use('/topic/*', topicSingle);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
