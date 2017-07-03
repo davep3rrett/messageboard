@@ -54,7 +54,20 @@ label {
   font-size: 1.5em;
 }
 
-a, button{
+a {
+  width: 100%;
+  color: $blue;
+  text-decoration: none;
+  font-weight: normal;
+
+  // TODO: make this less brittle...
+  h4 {
+    font-size: 24px;
+    margin: none;
+  }
+}
+
+button{
   color: $blue;
   text-decoration: none;
   font-size:1.5em;
@@ -113,6 +126,10 @@ a, button{
   transition: background 1s;
   -webkit-transition: background 1s;
   -moz-transition: background 1s;
+
+  a {
+    font-size: 1.5em;
+  }
 
   &:hover {
     background-color: $pink;
