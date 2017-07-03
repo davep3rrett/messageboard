@@ -6,12 +6,13 @@ block content
     h1= title
 
   div(class='wrap')
-    each topic in context.topics
+    each topic in topics
       - var url='/topic?id=' + topic._id
       div(class='topic')
         a(href=url): h4= topic.title
         p= topic.dateCreated
-        p= topic.username
+        if topic.username
+          p created by: #{topic.username}
 
   div(class='button-container')
     div(class='button')

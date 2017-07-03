@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -13,13 +12,6 @@ var topicSingle = require('./routes/topic-single');
 var newPost = require('./routes/new-post');
 
 var app = express();
-
-// app.use(sassMiddleware({
-//   src: path.join(__dirname, 'sass'),
-//   dest: path.join(__dirname, 'public'),
-//   debug: true,
-//   outputStyle: 'compressed',
-// }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,20 +38,7 @@ var opts = {
 
 mongoose.connect(credentials.mongo.development.connectionString);
 
-// var Topic = require('./models/topic.js');
-
-// Topic.find(function(err, topics) {
-//   if(err) return console.error(err);
-//   if(topics.length) return;
-
-//   new Topic({
-//     title: "test topic",
-//     posts: [{body: "test post number 1 bitch", date: new Date(2001, 7, 25), username: "davep3rrett"}, {body: "post number 2 baby", date: Date.now(), username: "swdyww"}],
-//     dateCreated: new Date(2000, 1, 1),
-//     username: "michael.believe"
-//   }).save();
-// });
-
+// define routes
 app.use('/', index);
 app.use('/users', users);
 app.use('/new-topic', newTopic);

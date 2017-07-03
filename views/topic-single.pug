@@ -6,7 +6,8 @@ block content
     h1= title
     each post in posts
       div(class='post')
-        p(class='username') #{post.username}
+        if post.username
+          p(class='username') posted by: #{post.username}
         p(class='date') #{post.date}
         p(class='body') #{post.body}
 

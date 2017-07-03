@@ -5,20 +5,16 @@ var Topic = require('../models/topic.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	Topic.find( function(err, topics) {
+	const conditions = null;
+	const projection = '_id title posts dateCreated username';
+	const options = {sort: { dateCreated: -1 } };
+	const cb = function(err, doc) {
 		if(err) console.error(err);
-		var context = {
-			topics: topics.map(function(topic) {
-				return {
-					_id: topic._id,
-					title: topic.title,
-					posts: topic.posts,
-					dateCreated: topic.dateCreated,
-				}
-			})
-		};
-		res.render('index', { title: 'message board', context: context, });
-	});
+		console.log(JSON.stringify(doc));
+		res.render('index', { topics: doc });
+	};
+
+	Topic.find(conditions, projection, options, cb);
 });
 
 module.exports = router;
