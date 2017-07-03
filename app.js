@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // import credentials
-var credentials = require('./credentials.js');
+//var credentials = require('./credentials.js');
 
 // database setup
 var mongoose = require('mongoose');
@@ -36,7 +36,8 @@ var opts = {
   }
 };
 
-mongoose.connect(credentials.mongo.development.connectionString);
+//mongoose.connect(credentials.mongo.development.connectionString);
+mongoose.connect(process.env.MONGO_CONNECTION_STRING);
 
 // define routes
 app.use('/', index);
