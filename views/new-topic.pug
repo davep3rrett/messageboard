@@ -1,13 +1,18 @@
 extends layout
 
 block content
-  form(class='new-topic' id='new-topic' role='form' action='/new-topic' method='POST')
-    input(type='text' id='title' name="title")
-    label(for='title') topic title
-    input(type='text' id='username' name='username')
-    label(for='username') username
-    button(type='submit') submit
-  label(for='body') post body
-  textarea(name='body' form='new-topic' id='body')
-
-  a(href='/') home
+  div(class='wrap')
+    form(class='new-topic' id='new-topic' role='form' action='/new-topic' method='POST')
+      label(for='title') subject 
+      input(type='text' id='title' name="title")
+      
+      label(for='username') your name (optional)
+      input(type='text' id='username' name='username')
+      
+      label(for='body') message
+      textarea(name='body' form='new-topic' id='body')
+      
+      div(class='button-container')
+        button(type='submit' class='button') submit
+        div(class='button')
+          a(href='/') home

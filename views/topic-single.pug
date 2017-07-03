@@ -2,15 +2,20 @@ extends layout
 
 block content
 
-  h1= title
-  each post in posts
-    p(class='username') #{post.username}
-    p(class='date') #{post.date}
-    p(class='body') #{post.body}
+  div(class='wrap')
+    h1= title
+    each post in posts
+      div(class='post')
+        p(class='username') #{post.username}
+        p(class='date') #{post.date}
+        p(class='body') #{post.body}
 
-  - var newPostUrl = '/new-post?id=' + _id
-  a(href=newPostUrl) reply
+    - var newPostUrl = '/new-post?id=' + _id
+    
+    div(class='button-container')
 
-  br
+      div(class='button')
+        a(href=newPostUrl) reply
 
-  a(href='/') home
+      div(class='button')
+        a(href='/') home

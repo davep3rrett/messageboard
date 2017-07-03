@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
 		doc.posts.push({ body: req.body.body, date: Date.now(), username: req.body.username });
 		doc.save(function(err) {
 			if(err) console.error(err);
-			return res.redirect(303, '/');
+			return res.redirect(303, '/topic?id=' + id);
 		});
 	});
 });

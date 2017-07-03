@@ -2,14 +2,20 @@ extends layout
 
 block content
 
-  h1= title
+  div(class='wrap')
 
-  h2 new post
+    h1= title
 
-  form(class='new-post' id='new-post' action='/new-post' method='POST')
-    input(type='text' id='username' name='username')
-    label(for='username') username
-    button(type='submit') submit
-  textarea(name='body' form='new-post' id='body')
+    h2 new post
 
-  a(href='/') home
+    form(class='new-post' id='new-post' action='/new-post' method='POST')
+      label(for='username') your name (optional)
+      input(type='text' id='username' name='username')
+      
+      label(for='body') message
+      textarea(name='body' form='new-post' id='body')
+
+      div(class='button-container')
+        button(type='submit' class='button') submit
+        div(class='button')
+          a(href='/') home

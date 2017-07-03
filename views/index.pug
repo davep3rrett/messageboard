@@ -2,17 +2,17 @@ extends layout
 
 block content
 
-  h1= title
+  div(class='title')
+    h1= title
 
-  each topic in context.topics
-    - var url='/topic?id=' + topic._id
-    a(href=url): h2= topic.title
-    h3= topic.dateCreated
-    h3= topic.username
+  div(class='wrap')
+    each topic in context.topics
+      - var url='/topic?id=' + topic._id
+      div(class='topic')
+        a(href=url): h4= topic.title
+        p= topic.dateCreated
+        p= topic.username
 
-    each post in topic.posts
-      p= post.body
-      p= post.date
-      p= post.username
-
-  a(href='/new-topic') new topic
+  div(class='button-container')
+    div(class='button')
+      a(href='/new-topic') new topic

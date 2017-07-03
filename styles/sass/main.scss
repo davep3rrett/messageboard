@@ -1,0 +1,122 @@
+$purple: #875589;
+$pink: #66143a;
+$blue: #212877;
+$melon: #F3B3A6;
+$old-rose: #B98B82;
+
+$fit-in-wrap: calc(100% - 2em);
+
+body {
+  background-color: white;
+}
+
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+  color: $blue;
+  font-weight: normal;
+}
+
+form {
+  width: $fit-in-wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $melon;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+
+  input, textarea {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 1em;
+    padding: 0.5em;
+    color: $melon;
+    background-color: $pink;
+    font-size: 1.5em;
+  }
+
+  textarea {
+    resize: none;
+    height: 10em;
+  }
+}
+
+label {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+a, button{
+  color: $blue;
+  text-decoration: none;
+  font-size:1.5em;
+  font-weight: normal;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 66vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.5em;
+  background-color: $old-rose;
+}
+
+.topic, .post {
+  width: $fit-in-wrap;
+  height: 7em;
+  background-color: $melon;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  transition: background 1s;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  &:hover {
+    background-color: $purple;
+  }
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  height: 3.5em;
+  border: 0.5em solid $purple;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-top: 1em;
+  margin: 1em;
+  text-align: center;
+  background-color: $melon;
+  transition: background 1s;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+
+  &:hover {
+    background-color: $pink;
+    a {
+      color: $old-rose;
+    }
+  }
+}
