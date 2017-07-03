@@ -5,7 +5,7 @@ block content
   h1= title
 
   each topic in context.topics
-    - var url='/topic/' + topic._id
+    - var url='/topic?id=' + topic._id
     a(href=url): h2= topic.title
     h3= topic.dateCreated
     h3= topic.username

@@ -8,4 +8,9 @@ block content
     p(class='date') #{post.date}
     p(class='body') #{post.body}
 
+  - var newPostUrl = '/new-post?id=' + _id
+  a(href=newPostUrl) reply
+
+  br
+
   a(href='/') home

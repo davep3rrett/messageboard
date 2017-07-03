@@ -6,7 +6,7 @@ var Topic = require('../models/topic.js');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	Topic.find( function(err, topics) {
-		if(err) console.err(err);
+		if(err) console.error(err);
 		var context = {
 			topics: topics.map(function(topic) {
 				return {

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+  h1= title
+
+  h2 new post
+
+  form(class='new-post' id='new-post' action='/new-post' method='POST')
+    input(type='text' id='username' name='username')
+    label(for='username') username
+    button(type='submit') submit
+  textarea(name='body' form='new-post' id='body')
+
+  a(href='/') home
